@@ -1,2 +1,6 @@
-// @import 'styles/_config.scss';
-// @import 'styles/header.scss'
+@import 'styles/_config.scss';
+
+.App {
+  color: $primaryText;
+  background-color: $primaryBackground;
+}
