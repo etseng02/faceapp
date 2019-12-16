@@ -1,14 +1,41 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 
-class UploadImage extends Component{
+interface MyComponentProps {
+  props?: any
+}
+
+interface MyComponentState {
+  selectedFile: string
+}
+
+class UploadImage extends Component<MyComponentProps, MyComponentState>{
 
   constructor(props: any){
     super(props);
+
+    this.state = {
+      selectedFile: ""
+   }
+
+  }
+
+  fileSelectedHandler = (event: any) => {
+    if (event.target.value) {
+      this.setState({selectedFile: event.target.files[0].name});
+    } else {
+      this.setState({selectedFile: "No file Selected"});
+    }
   }
 
  render(){
    return(
-    <input type="file"/>
+     <Fragment>
+       <input
+         type="file"
+         onChange={this.fileSelectedHandler}
+       />
+       <h2>Selected File: {this.state.selectedFile}</h2>
+     </Fragment>
    )
  }
 }
