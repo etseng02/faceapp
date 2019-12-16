@@ -1,7 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export const UploadImage: React.FC = () => {
-  return (
-  <input type="file"/>
-  )
+class UploadImage extends Component{
+
+  constructor(props: any){
+    super(props);
+  }
+
+ render(){
+   return(
+    <input type="file"/>
+   )
+ }
 }
+
+export default UploadImage
