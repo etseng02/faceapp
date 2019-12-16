@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { HomeScreen } from './Screens/HomeScreen';
 
 const App: React.FC = () => {

@@ -1,0 +1,11 @@
+@import './config';
+
+header {
+  background-color: $primaryColor;
+  padding: 1rem;
+}
+
+h1 {
+  margin-top: 0px;
+  color: $primaryText;
+}
