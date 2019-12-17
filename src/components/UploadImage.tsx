@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import '../styles/_uploadimage.scss'
 
 interface MyComponentProps {
   props?: any
