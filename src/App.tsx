@@ -3,6 +3,8 @@ import './App.scss';
 import { HomeScreen } from './Screens/HomeScreen';
 
 const App: React.FC = () => {
+
+
   return (
     <div className="App">
       <HomeScreen/>

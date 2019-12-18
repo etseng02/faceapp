@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import '../styles/_uploadimage.scss'
+const axios = require('axios');
 
 interface MyComponentProps {
   props?: any
@@ -21,11 +22,22 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
   }
 
   fileSelectedHandler = (event: any) => {
-    if (event.target.value) {
-      this.setState({selectedFile: event.target.files[0].name});
-    } else {
-      this.setState({selectedFile: "No file Selected"});
-    }
+    axios.get('http://localhost:5000/api/recognize')
+      .then(function (response:any) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error:any) {
+        // handle error
+        console.log(error);
+      })
+
+
+    // if (event.target.value) {
+    //   this.setState({selectedFile: event.target.files[0].name});
+    // } else {
+    //   this.setState({selectedFile: "No file Selected"});
+    // }
   }
 
  render(){

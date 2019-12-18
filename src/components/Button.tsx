@@ -3,12 +3,24 @@ import { tsPropertySignature } from '@babel/types';
 
 interface Props {
   text: String
+  changeUploadMode: (newMode: string)=> void
 }
 
-export const Button: React.FC<Props> = (props) => {
+export const Button: React.FC<Props> = ({text, changeUploadMode}) => {
+
+  let mode = ""
+
+  if (text === 'Identify Face') {
+    mode = 'identify'
+  } else if (text === 'Train Face'){
+    mode = 'train'
+  }
+
   return (
-    <button>
-      {props.text}
+    <button
+    onClick={()=> changeUploadMode(mode)}
+    >
+      {text}
     </button>
   )
 }
