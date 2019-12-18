@@ -7,7 +7,9 @@ interface MyComponentProps {
 }
 
 interface MyComponentState {
-  selectedFile: string
+  selectedFile: string,
+  oldImage: string,
+  newImage: string
 }
 
 class UploadImage extends Component<MyComponentProps, MyComponentState>{
@@ -16,12 +18,17 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
     super(props);
 
     this.state = {
-      selectedFile: ""
+      selectedFile: "",
+      oldImage: "",
+      newImage: "",
    }
 
   }
 
   fileSelectedHandler = (event: any) => {
+    
+
+    this.setState({... this.state, oldImage: URL.createObjectURL(event.target.files[0])});
 
     console.log(event.target.files[0])
 
@@ -76,6 +83,10 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
          name="image"
        />
        {/* <h2>Selected File: {this.state.selectedFile}</h2> */}
+       <div className="images">
+        <img src={this.state.oldImage}></img>
+        <img src={this.state.newImage}></img>
+       </div>
      </Fragment>
    )
  }

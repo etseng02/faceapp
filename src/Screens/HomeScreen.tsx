@@ -17,6 +17,8 @@ export const HomeScreen: React.FC = (props) => {
     <Fragment>
       <Header/>
 
+      <h2>Face app is an application that can identify faces when trained. To begin please train a face or if you have already, you can identify a face.</h2>
+
       <Button
         text ={'Identify Face'}
         changeUploadMode={changeUploadMode}
