@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/_button.scss'
 // import { tsPropertySignature } from '@babel/types';
 
 interface Props {

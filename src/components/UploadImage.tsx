@@ -39,7 +39,14 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
     }
 
     if (this.props.mode === "identify") {
-      axios.get('http://localhost:5000/api/recognize')
+      axios({
+        method: 'post',
+        url:'http://localhost:5000/api/recognize',
+        data: {
+          image: event.target.files[0]
+        }
+      })
+
         .then(function (response:any) {
           // handle success
           console.log(response);
@@ -66,6 +73,7 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
        <input
          type="file"
          onChange={this.fileSelectedHandler}
+         name="image"
        />
        {/* <h2>Selected File: {this.state.selectedFile}</h2> */}
      </Fragment>

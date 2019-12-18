@@ -1,6 +1,10 @@
 @import 'styles/_config.scss';
 
-.App {
-  color: $primaryText;
+// .App {
+//   color: $primaryText;
+//   background-color: $primaryBackground;
+// }
+body {
   background-color: $primaryBackground;
+  color: white;
 }
