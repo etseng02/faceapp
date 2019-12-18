@@ -3,7 +3,7 @@ import '../styles/_uploadimage.scss'
 const axios = require('axios');
 
 interface MyComponentProps {
-  props?: any
+  mode: string
 }
 
 interface MyComponentState {
@@ -22,15 +22,35 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
   }
 
   fileSelectedHandler = (event: any) => {
-    axios.get('http://localhost:5000/api/recognize')
-      .then(function (response:any) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error:any) {
-        // handle error
-        console.log(error);
-      })
+
+    console.log(event.target.files[0])
+
+    if (this.props.mode === "train") {
+      console.log("Training!")
+      axios.get('http://localhost:5000/api/train')
+        .then(function (response:any) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error:any) {
+          // handle error
+          console.log(error);
+        })
+    }
+
+    if (this.props.mode === "identify") {
+      axios.get('http://localhost:5000/api/recognize')
+        .then(function (response:any) {
+          // handle success
+          console.log(response);
+        })
+        .catch(function (error:any) {
+          // handle error
+          console.log(error);
+        })
+    }
+
+
 
 
     // if (event.target.value) {
@@ -47,7 +67,7 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
          type="file"
          onChange={this.fileSelectedHandler}
        />
-       <h2>Selected File: {this.state.selectedFile}</h2>
+       {/* <h2>Selected File: {this.state.selectedFile}</h2> */}
      </Fragment>
    )
  }
