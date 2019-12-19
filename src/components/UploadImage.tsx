@@ -38,8 +38,15 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
     data.append("image", event.target.files[0])
     
     if (this.props.mode === "train") {
-      console.log("Training!")
-      axios.get('http://localhost:5000/api/train')
+       axios({
+        method: 'post',
+        url:'http://localhost:5000/api/train',
+        data: data,
+        headers:{
+          'Content-Type': 'multipart/form-data',
+          encoding: null
+        }
+      })
         .then(function (response:any) {
           // handle success
           console.log(response);

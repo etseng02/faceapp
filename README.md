@@ -1,19 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Faceapp is an application that will accept a picture and return the same picture with all the faces identified with a box. If the application recognizes a face it will display the name of the person. If not, it will return unknown.
 
-## Available Scripts
+## Getting Started:
 
-In the project directory, you can run:
-
-### `npm start`
+1. 'npm install' node modules
+2. Download and run the API server found here: https://github.com/etseng02/faceappflask
+3. 'npm start' to run the application in development mode
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Requirements
 
 
 ## Steps to produce Docker container and run
 
 docker build -t faceapp .
-
-Successfully built 14f19e92e12e
 
 docker run -p 3000:3000 -d faceapp
