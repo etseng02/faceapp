@@ -33,7 +33,16 @@ export const HomeScreen: React.FC = (props) => {
         <Instructions/>
       }
 
-      {state.imageUploadMode &&
+      {state.imageUploadMode === 'train' &&
+        <Fragment>
+          <h1>{state.imageUploadMode}</h1>
+        <UploadImage
+          mode = {state.imageUploadMode}
+        />
+        </Fragment>
+      }
+
+      {state.imageUploadMode === 'identify' &&
         <Fragment>
           <h1>{state.imageUploadMode}</h1>
         <UploadImage
