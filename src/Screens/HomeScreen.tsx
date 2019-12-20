@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Header } from '../components/Header';
 import UploadImage from '../components/UploadImage'
 import { Button } from '../components/Button';
+import {Instructions} from '../components/instructions'
 
 export const HomeScreen: React.FC = (props) => {
 
@@ -28,9 +29,13 @@ export const HomeScreen: React.FC = (props) => {
         changeUploadMode={changeUploadMode}
       />
 
+      {state.imageUploadMode === 'train' &&
+        <Instructions/>
+      }
+
       {state.imageUploadMode &&
         <Fragment>
-        <h1>{state.imageUploadMode}</h1>
+          <h1>{state.imageUploadMode}</h1>
         <UploadImage
           mode = {state.imageUploadMode}
         />
