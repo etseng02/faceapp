@@ -16,4 +16,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 docker build -t faceapp .
 
-docker run -p 3000:3000 -d faceapp
+docker container run -p 3000:3000 -d --name faceapp faceapp
