@@ -17,6 +17,8 @@ docker container run -p 3000:3000 -d --name faceapp faceapp
 
 ## Final Product
 
+You can upload a picture to identify faces in an image. Or you can train the application to recognize images.
+
 !["Identifying a face"](https://github.com/etseng02/faceapp/blob/master/Docs/1.png)
 
 After identifying pictures in a face the application will append the image to the page. The image will identify faces it has been trained on and will display unknown for faces it has not been trained on.
