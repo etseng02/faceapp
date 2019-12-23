@@ -14,3 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 docker build -t faceapp .
 
 docker container run -p 3000:3000 -d --name faceapp faceapp
+
+## Final Product
+
+!["Identifying a face"](https://github.com/etseng02/faceapp/blob/master/Docs/1.png)
+
+After identifying pictures in a face the application will append the image to the page. The image will identify faces it has been trained on and will display unknown for faces it has not been trained on.
+
+!["Appending results to main page"](https://github.com/etseng02/faceapp/blob/master/Docs/2.png)
