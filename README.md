@@ -9,9 +9,6 @@ Faceapp is an application that will accept a picture and return the same picture
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Requirements
-
-
 ## Steps to produce Docker container and run
 
 docker build -t faceapp .
