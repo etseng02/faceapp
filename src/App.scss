@@ -15,4 +15,21 @@ body {
   margin-right: 3em;
 }
 
-// insert media queries here 
+.main-buttons {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+// insert media queries here
+@media (max-width: 600px) {
+
+  .main-body {
+    padding:0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+}

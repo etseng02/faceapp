@@ -20,16 +20,18 @@ export const HomeScreen: React.FC = (props) => {
       <div className="main-body">
       <h2>Face app is an application that can identify faces when trained. To begin please train a face or if you have already, you can identify a face.</h2>
 
-      <Button
-        text ={'Identify Face'}
-        changeUploadMode={changeUploadMode}
-        selected={state.imageUploadMode}
-      />
-      <Button
-        text ={'Train Face'}
-        changeUploadMode={changeUploadMode}
-        selected={state.imageUploadMode}
-      />
+      <div className="main-buttons">
+        <Button
+          text ={'Identify Face'}
+          changeUploadMode={changeUploadMode}
+          selected={state.imageUploadMode}
+        />
+        <Button
+          text ={'Train Face'}
+          changeUploadMode={changeUploadMode}
+          selected={state.imageUploadMode}
+        />
+      </div>
 
       {state.imageUploadMode === 'train' &&
         <Instructions/>
@@ -37,7 +39,6 @@ export const HomeScreen: React.FC = (props) => {
 
       {state.imageUploadMode === 'train' &&
         <Fragment>
-          <h1>{state.imageUploadMode}</h1>
         <UploadImage
           mode = {state.imageUploadMode}
         />
@@ -46,7 +47,6 @@ export const HomeScreen: React.FC = (props) => {
 
       {state.imageUploadMode === 'identify' &&
         <Fragment>
-          <h1>{state.imageUploadMode}</h1>
         <UploadImage
           mode = {state.imageUploadMode}
         />

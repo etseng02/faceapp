@@ -1,0 +1,28 @@
+@import './config';
+
+.instructions {
+  border-radius: 10px;
+  border-style: solid;
+  border-color: $primaryText;
+  border-width: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  width: 50%
+}
+
+H2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+
+  .instructions {
+    width: 90%;
+  }
+  
+}
