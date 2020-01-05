@@ -1,12 +1,27 @@
 @import './config';
 
+.upload {
+
+  
+}
+
 input {
+  display: flex;
   padding: 1rem;
   color: $primaryText;
   font-size: 1rem;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  justify-content: center;
+  justify-items: center;
+  
 }
 
 .images{
-  width: 100%;
-  flex-direction: row;
+  display: flex;
+  margin-left:auto;
+  margin-right:auto;
+  justify-items: center;
+  justify-content: center;
 }

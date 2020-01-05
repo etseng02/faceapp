@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import '../styles/_uploadimage.scss'
-import { createWriteStream } from 'fs'
+// import { createWriteStream } from 'fs'
 const axios = require('axios');
 
 interface MyComponentProps {
@@ -29,7 +29,7 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
   fileSelectedHandler =  (event: any) => {
 
     //this.setState({... this.state, oldImage: files});
-    this.setState({... this.state, oldImage: URL.createObjectURL(event.target.files[0])});
+    this.setState({...this.state, oldImage: URL.createObjectURL(event.target.files[0])});
 
     console.log(event.target.files[0])
 
@@ -77,7 +77,7 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
           
           let blob = new Blob( [ response.data ], { type: "image/jpeg" } );
 
-          self.setState({... self.state, newImage: URL.createObjectURL(blob)});
+          self.setState({...self.state, newImage: URL.createObjectURL(blob)});
           
         })
         .catch(function (error:any) {
@@ -86,28 +86,24 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
         })
     }
 
-
-
-
-    // if (event.target.value) {
-    //   this.setState({selectedFile: event.target.files[0].name});
-    // } else {
-    //   this.setState({selectedFile: "No file Selected"});
-    // }
   }
 
  render(){
    return(
      <Fragment>
-       <input
-         id='image'
-         type="file"
-         onChange={this.fileSelectedHandler}
-         name="image"
-       />
-       {/* <h2>Selected File: {this.state.selectedFile}</h2> */}
+       <div className="upload">
+        <input
+          id='image'
+          type="file"
+          onChange={this.fileSelectedHandler}
+          name="image"
+        />
+       </div>
        <div className="images">
-        <img src={this.state.oldImage}></img>
+         
+         {this.state.newImage==="" &&
+          <img src={this.state.oldImage} ></img>
+          }
 
         <img src={this.state.newImage}></img>
        </div>
