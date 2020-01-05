@@ -101,9 +101,9 @@ class UploadImage extends Component<MyComponentProps, MyComponentState>{
        </div>
        <div className="images">
          
-         {this.state.newImage==="" &&
+        {this.state.newImage==="" &&
           <img src={this.state.oldImage} ></img>
-          }
+        }
 
         <img src={this.state.newImage}></img>
        </div>

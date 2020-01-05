@@ -21,13 +21,13 @@ export const Button: React.FC<Props> = ({text, selected, changeUploadMode}) => {
   }
 
   if (selected === 'identify' && text === 'Identify Face') {
-    background = 'yellow'
+    background = '#ffc800'
   } else if (text === 'Identify Face'){
     background = 'white'
   }
 
   if (selected === 'train' && text === 'Train Face') {
-    background = 'yellow'
+    background = '#ffc800'
   } else if (text === 'Train Face'){
     background = 'white'
   }
