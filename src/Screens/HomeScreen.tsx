@@ -23,10 +23,12 @@ export const HomeScreen: React.FC = (props) => {
       <Button
         text ={'Identify Face'}
         changeUploadMode={changeUploadMode}
+        selected={state.imageUploadMode}
       />
       <Button
         text ={'Train Face'}
         changeUploadMode={changeUploadMode}
+        selected={state.imageUploadMode}
       />
 
       {state.imageUploadMode === 'train' &&
